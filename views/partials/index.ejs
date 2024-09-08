@@ -3,9 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Random Joke</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        .joke-card { border: 1px solid #ddd; padding: 20px; margin: 0 auto; width: 50%; border-radius: 8px; }
+    </style>
 </head>
 <body>
-    <h1>Hello</h1>
+    <h1>Here's a Random Joke for You!</h1>
+    <% if (locals.data) { %>
+        <div class="joke-card">
+            <p><%= data.joke %></p>
+        </div>
+    <% } else { %>
+        <p>No joke available at the moment.</p>
+    <% } %>
 </body>
 </html>
